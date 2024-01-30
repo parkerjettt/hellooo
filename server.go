@@ -5,12 +5,12 @@ import (
 	"net/http"
 )
 
-func helloHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, world!\n")
+func server(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "Hello, World!")
 }
 
 func main() {
-	http.HandleFunc("/hello", helloHandler)
-	fmt.Println("Server listening on :8080")
-	http.ListenAndServe(":8080", nil)
+	http.HandleFunc("/hello", server)
+	fmt.Println("Server is running on http://Parker:1234/hello")
+	http.ListenAndServe(":1234", nil)
 }
