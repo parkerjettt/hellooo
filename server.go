@@ -11,6 +11,6 @@ func server(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/hello", server)
-	fmt.Println("Server is running on http://Parker:1234/hello")
+	fmt.Println("Server is running!")
 	http.ListenAndServe(":1234", nil)
 }
